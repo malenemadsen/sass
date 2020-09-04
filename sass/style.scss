@@ -1,0 +1,104 @@
+$header-coloer: rgb(100, 4, 155);
+$font-coloer:rgb(231, 231, 231);
+$header-font: quicksand, arial, sans-serif;
+$p-font: georgia, 'times new roman', times, serif;
+$font-size: 20px;
+$line: 20px;
+$center: center;
+$column: 2;
+
+@mixin text {
+    font-family: $p-font;
+    line-height: $line;
+    
+}
+
+@mixin header {
+    color:lighten($header-coloer, 10%);
+    font-family: $header-font;
+}
+
+body {
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:$font-coloer;
+  }
+
+
+h1 {
+    color: $header-coloer ;
+    font-family: $header-font;
+    font-size: $font-size * 3; 
+    font-weight: 600;
+    text-align: $center;
+}
+
+h2 {
+    @include header;
+}
+h3 {
+    @include header;
+    text-align: $center;
+    padding-top: 20px;
+    font-size: $font-size + 5px; 
+}
+h4 {
+    @include header;
+    padding-top: 10px;
+    font-size: $font-size - 2px; 
+}
+
+div {
+    margin: 50px;
+}
+p{
+    @include text
+}
+.box{
+    background-color:rgba(56, 56, 56, 0.534);
+    margin: 0px 200px;
+    border: 1px solid rgb(96, 19, 99);
+    border-radius: 20px;
+}
+
+ul{
+    text-align: $center;
+    li{
+        display: inline;
+        text-align: $center;
+        a{
+            text-decoration: none;
+            font-family: $p-font;
+            color: $font-coloer;
+            padding: 5px;
+            &:hover{
+                color:lighten($header-coloer, 30%);
+            }
+        }
+    }
+}
+
+.active{
+        color:lighten($header-coloer, 30%);
+}
+.column{
+    column-count: $column;
+}
+.images {
+    width: 100%;
+    justify-content: center;
+}
+
+.footer{
+    p{
+        text-align: $center;
+    }
+    ul{
+        text-align: $center;
+        img{
+            width: 50px;
+        }
+    }
+}
